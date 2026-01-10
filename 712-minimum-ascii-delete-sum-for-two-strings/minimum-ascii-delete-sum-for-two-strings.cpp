@@ -7,9 +7,11 @@ public:
         for (int j = m - 1; j >= 0; j--) {
             dp[j] = dp[j + 1] + s2[j];
         }
+
         for (int i = n - 1; i >= 0; i--) {
             int prev = dp[m];
             dp[m] += s1[i];
+
             for (int j = m - 1; j >= 0; j--) {
                 int temp = dp[j];
                 if (s1[i] == s2[j]) {
