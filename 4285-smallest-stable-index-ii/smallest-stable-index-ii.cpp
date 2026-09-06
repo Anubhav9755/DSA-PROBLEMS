@@ -2,7 +2,7 @@ class Solution {
 public:
     int firstStableIndex(vector<int>& nums, int k) {
         int n = nums.size();
-        vector<int> mx(n, -1e9), mn(n, 1e9);
+        vector<int> mx(n), mn(n);
         int mxi = nums[0], mni = nums[n-1];
         for (int i = 0; i < n; i++) {
             if (nums[i] > mxi) mxi = nums[i] ;
