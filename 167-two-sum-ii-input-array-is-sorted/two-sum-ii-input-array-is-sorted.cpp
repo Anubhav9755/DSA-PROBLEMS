@@ -1,22 +1,20 @@
-
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        int n = numbers.size();
+        int i = 0;
+        int j = numbers.size() - 1;
 
-        int l = 0, r = n - 1;
-
-        while (l < r) {
-            int sum = numbers[l] + numbers[r];
+        while (i < j) {
+            int sum = numbers[i] + numbers[j];
 
             if (sum == target) {
-                return {l + 1, r + 1};
+                return {i + 1, j + 1};
             }
             else if (sum < target) {
-                l++;
+                i++;
             }
             else {
-                r--;
+                j--;
             }
         }
 
