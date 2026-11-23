@@ -1,26 +1,17 @@
-class ProductOfNumbers
-{
-    vector<int> list;
+class ProductOfNumbers {
+    vector<int> a;
 public:
-    ProductOfNumbers() { } 
-    void add(int num)
-    {
-        list.push_back(num); 
+    ProductOfNumbers() {}
+
+    void add(int num) {
+        a.push_back(num);
     }
 
-    int getProduct(int k)
-    {
-        if (k > list.size())
-        { 
-            return 0;
-        }
-        int product = 1;
-        
-        for (int i = list.size() - k; i < list.size(); i++)
-        { 
-            product *= list[i]; 
-        }
-        return product; 
+    int getProduct(int k) {
+        int n = a.size(), prod = 1;
+        for (int i = n - k; i < n; i++)
+            prod *= a[i];
+        return prod;
     }
 };
 
